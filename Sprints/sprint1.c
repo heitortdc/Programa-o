@@ -1,15 +1,15 @@
-int main(){
-int x;
-float temp;
+#include <stdio.h>
 
-prrintf("digite um valor entre 0 e 1023");
-scanf("%d",x);
+int main() {
+    int x;
+    float temp;
 
-temp=260*x/1023-20;
+    scanf("%d", &x);
 
-printf("o valor digitado é %d ",x);
+    temp = 260.0 * x / 1023.0 - 20.0;
 
-printf("o resultado é %.2f ",temp);
+    printf("%.2f\n", temp);
 
+    return 0;
 }
 
