@@ -4,6 +4,7 @@ int main() {
     int x;
     float temp;
 
+    printf("digita um valor entre 0 a 1023");
     scanf("%d", &x);
 
     temp = 260.0 * x / 1023.0 - 20.0;
