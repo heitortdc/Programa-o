@@ -5,15 +5,24 @@
 
 int main() {
 
+    char sigma[100];
     char stand[100];
     float temp;
-    char *p;
+    char *p,*sig;
     int i=0;
+    
+    
+    printf("quantas vezes pretenda executar o cálculode temperatura ? ");
+    fgets(sigma,100,stdin); 
 
-    while(i<5){
+    long maxi=strtol(sigma,&sig,10);
+
+
+
+    while(i<maxi){
 
     
-        printf("introduza um valor pelo sensor \n ");
+        printf("introduza um valor pelo sensor  :\n ");
     
         fgets(stand,100,stdin);
 
@@ -33,9 +42,10 @@ int main() {
         else if ((temp > -10.0) && (temp < 190.0)) {
 
         printf("o valor de tempratura é %.2f \n ", temp);
+
+        i=i+1;
     
         }
-        
         
         else {
 
