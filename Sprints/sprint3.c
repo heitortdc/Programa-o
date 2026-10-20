@@ -29,16 +29,18 @@ int main() {
     
         long l =strtol(stand, &p,10);
 
-    
-        temp = (260.0 * l ) / 1023.0 - 20.0;
-    
 
-         
-        if (l==-1){
+         if (l==-1){
 
           break;
 
         }
+
+    
+        temp = (260.0 * l ) / 1023.0 - 20.0;
+    
+
+
         else if ((temp > -10.0) && (temp < 190.0)) {
 
         printf("o valor de tempratura é %.2f \n ", temp);
@@ -51,6 +53,7 @@ int main() {
 
         printf("valor fora de gama \n ");
         i=i+1;
+
         }
 
 }
