@@ -3,60 +3,114 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#define MAXL 2
+
 int main() {
 
-    char sigma[100];
     char stand[100];
-    float temp;
     char *p,*sig;
     int i=0;
+    long l[MAXL];
+    int contador;
     
-    
-    printf("quantas vezes pretenda executar o cálculode temperatura ? ");
-    fgets(sigma,100,stdin); 
 
-    long maxi=strtol(sigma,&sig,10);
-
-
-
-    while(i<maxi){
+    while(i<MAXL){
 
     
-        printf("introduza um valor pelo sensor  :\n ");
+        printf("introduza um valor pelo sensor , se desejar sair ,digita -1 :\n ");
     
         fgets(stand,100,stdin);
 
-    
-        long l =strtol(stand, &p,10);
+        l[i] =strtol(stand, &p,10);
 
-    
-        temp = (260.0 * l ) / 1023.0 - 20.0;
-    
-
-         
-        if (l==-1){
+        if (l[i]==-1){
 
           break;
 
         }
-        else if ((temp > -10.0) && (temp < 190.0)) {
-
-        printf("o valor de tempratura é %.2f \n ", temp);
+    
+        else {
 
         i=i+1;
+
+        }
+
+        contador=contador+1;
+
+    }
+    
+
+    float temp[contador];
+    
+
+
+    for(int j=0;j<=contador;j++){
+
+    
+    
+        temp[j] = (260.0 * l[j] ) / 1023.0 - 20.0;
+    
+
+        if ((temp[j] > -10.0) && (temp[j]< 190.0)) {
+
+        printf("o valor de tempratura é %.2f \n ", temp[j]);
+
     
         }
         
         else {
 
         printf("valor fora de gama \n ");
+        temp[j]=0;
+
         }
 
-}
+    }
 
+    float minimo=temp[0];
+    float maximo=temp[0];
+    float media;
+    float desvio;
+    float soma,sd,varianca;
 
+for(int m=0;m<=contador;m++){
 
-printf("fim de programa \n");
+    soma=soma+temp[i];
+
+    if(temp[i]<minimo){
+
+        minimo=temp[i];
+    }
+
+    if(temp[i]>maximo){
+
+        maximo=temp[i];
+    }
+    
+   }
+
+   media = soma / contador;
+
+    
+    for (int i = 0; i < contador; i++) {
+        double difer = temp[i] - media;
+        sd=sd+(difer*difer);
+    }
+
+    
+    varianca = sd/contador; 
+
+    
+    desvio = varianca*varianca;
+
+    printf("\n--- Resultados ---\n");
+    printf("minimo: %.5f\n", minimo);
+    printf("Maximo: %.2f\n", maximo);
+    printf("Media: %.2f\n", media);
+    printf("Desvio Padrao: %.2f\n", desvio);
+
+   
+    printf("fim de programa \n");
 
     return 0;
 }
