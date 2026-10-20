@@ -18,10 +18,8 @@ int main() {
     while (i < MAXL) {
 
         printf("Introduza um valor pelo sensor; para sair, digite -1:\n");
-
-        if (fgets(stand, 100, stdin) == NULL) {
-            break;
-        }
+        fgets(stand, 100, stdin);
+        
 
         l[i] = strtol(stand, &p, 10);
 
@@ -29,14 +27,11 @@ int main() {
             break;
         }
 
-        i++;
-        contador++;
+        i=i+1;
+        contador=contador+1;
     }
 
-    if (contador == 0) {
-        printf("Nao foram introduzidos valores.\n");
-        return 0;
-    }
+   
 
     float temp[MAXL];
 
