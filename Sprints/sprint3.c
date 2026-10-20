@@ -50,6 +50,7 @@ int main() {
         else {
 
         printf("valor fora de gama \n ");
+        i=i+1;
         }
 
 }
