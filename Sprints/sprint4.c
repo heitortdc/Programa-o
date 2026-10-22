@@ -53,7 +53,7 @@ int main() {
     float media;
     float desvio;
     float soma = 0;
-    float sd = 0;
+    float somaquadrado= 0;
     float varianca;
 
     for (int m = 0; m < contador; m++) {
@@ -74,10 +74,10 @@ int main() {
     for (int m = 0; m < contador; m++) {
 
         float difer = temp[m] - media;
-        sd = sd + (difer * difer);
+        somaquadrado = somaquadrado + (difer * difer);
     }
 
-    varianca = sd / contador;
+    varianca = somaquadrado / contador;
 
     desvio = sqrt(varianca);
 
