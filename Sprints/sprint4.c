@@ -5,17 +5,25 @@
 #include <ctype.h>
 #include <math.h>
 
-#define MAXL 20
 
 int main() {
 
     char stand[100];
     char *p;
     int i = 0;
-    long l[MAXL];
     int contador = 0;
+    char namostras[100];
+    char *n;
+    
+    printf("digita o número de amostras que deseja verificar para iniciar o programa:\n");
+    fgets(namostras, 100, stdin);
+    
+    long maxi=strtol(namostras ,&n,10);
+    
+    long l[maxi];
 
-    while (i < MAXL) {
+
+    while (i < maxi) {
 
         printf("Introduza um valor pelo sensor; para sair, digite -1:\n");
         fgets(stand, 100, stdin);
@@ -33,7 +41,7 @@ int main() {
 
    
 
-    float temp[MAXL];
+    float temp[maxi];
 
     for (int j = 0; j < contador; j++) {
 
