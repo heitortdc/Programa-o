@@ -3,11 +3,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <math.h>
+
 #define MAXL 5
 
 float converter(int valor);
 float verificar(float valor);
-//int lerValores();
+int lerValores(long Vsensores[MAXL], int *contador);
 //float resultados();
 
 char stand[100];
@@ -18,20 +19,12 @@ int contador = 0;
 
 int main()
 {
-    while (i < MAXL)
+    
+    for(int j=0;j<contador;j++)
     {
-        printf("Introduza um valor pelo sensor; para sair, digite -1:\n");
-        fgets(stand, 100, stdin);
+        float temp = converter(Vsensores[j]);
+        verificar(temp);
 
-        Vsensores[i] = strtol(stand, &p, 10);
-
-        if (Vsensores[i] == -1)
-        {
-            break;
-        }
-
-        i =+ 1;
-        contador =+ 1;
     }
 
     printf("fim do programa");
@@ -56,6 +49,23 @@ float verificar(float valor){
     }
 }
 
+int lerValores(long Vsensores[MAXL], int *contador)
+{
+    while (i < MAXL)
+    {
+        printf("Introduza um valor pelo sensor; para sair, digite -1:\n");
+        fgets(stand, 100, stdin);
 
+        Vsensores[i] = strtol(stand, &p, 10);
+
+        if (Vsensores[i] == -1)
+        {
+            break;
+        }
+
+        i =+ 1;
+        contador =+ 1;
+    }
+}
 
 
