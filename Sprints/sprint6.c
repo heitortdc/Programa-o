@@ -2,7 +2,7 @@
 #include <string.h>
 #include <math.h>
 
-#define MAX_LEITURAS 100
+#define MAX_LEITURAS 20
 #define TAM_LINHA 100
 #define TAM_NOME 20
 #define T_MIN -10.0
